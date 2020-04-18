@@ -15,7 +15,7 @@ module Spree
           variant: variant,
           line_item: line_item,
         }
-        if SolidusSupport.solidus_gem_version < Gem::Version.new('2.5.x')
+        if ::Spree.solidus_gem_version < Gem::Version.new('2.5.x')
           inventory_unit_attributes[:order] = @order
         end
         @order.inventory_units.includes(
